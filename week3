@@ -1,0 +1,119 @@
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("===== SIMPLE GRADE CLASSIFIER =====");
+        int score = 85;
+
+        if (score >= 60) {
+            System.out.println("PASSED");
+        } else {
+            System.out.println("FAILED");
+        }
+
+        System.out.println("\n===== MULTI-TIER DISCOUNT SYSTEM =====");
+        double purchaseAmount = 2500;
+        double discount;
+
+        if (purchaseAmount >= 5000) {
+            discount = 0.15;
+        } else if (purchaseAmount >= 3000) {
+            discount = 0.10;
+        } else if (purchaseAmount >= 1000) {
+            discount = 0.05;
+        } else {
+            discount = 0.0;
+        }
+
+        double finalPrice = purchaseAmount - (purchaseAmount * discount);
+
+        System.out.println("Purchase Amount: " + purchaseAmount);
+        System.out.println("Discount: " + (discount * 100) + "%");
+        System.out.println("Final Price: " + finalPrice);
+
+        System.out.println("\n===== NESTED LOGIN VALIDATOR =====");
+        String username = "rian";
+        String password = "12345";
+        boolean accountLocked = false;
+
+        if (username.equals("rian")) {
+            if (password.equals("12345")) {
+                if (!accountLocked) {
+                    System.out.println("Login successful.");
+                } else {
+                    System.out.println("Login failed: Account is locked.");
+                }
+            } else {
+                System.out.println("Login failed: Incorrect password.");
+            }
+        } else {
+            System.out.println("Login failed: Incorrect username.");
+        }
+
+        System.out.println("\n===== ATM TRANSACTION AUTHORIZER =====");
+        String atmUsername = "rian";
+        String pin = "1234";
+        String accountTier = "Gold";
+        double balance = 10000;
+        double withdrawal = 2000;
+        double dailyLimit = 5000;
+        double withdrawnToday = 1000;
+        double feeRate;
+
+        if (atmUsername.equals("rian")) {
+            if (pin.equals("1234")) {
+                if (accountTier.equalsIgnoreCase("Bronze")) {
+                    feeRate = 0.03;
+                } else if (accountTier.equalsIgnoreCase("Silver")) {
+                    feeRate = 0.02;
+                } else if (accountTier.equalsIgnoreCase("Gold")) {
+                    feeRate = 0.01;
+                } else if (accountTier.equalsIgnoreCase("Platinum")) {
+                    feeRate = 0.005;
+                } else {
+                    feeRate = -1;
+                }
+
+                if (feeRate < 0) {
+                    System.out.println("DENIED: Invalid account tier.");
+                } else {
+                    double fee = withdrawal * feeRate;
+                    double total = withdrawal + fee;
+
+                    if (withdrawnToday + withdrawal > dailyLimit) {
+                        System.out.println("DENIED: Daily withdrawal limit exceeded.");
+                    } else if (total > balance) {
+                        System.out.println("DENIED: Insufficient balance.");
+                    } else {
+                        switch (accountTier.toLowerCase()) {
+                            case "bronze":
+                                feeRate = 0.03;
+                                break;
+                            case "silver":
+                                feeRate = 0.02;
+                                break;
+                            case "gold":
+                                feeRate = 0.01;
+                                break;
+                            case "platinum":
+                                feeRate = 0.005;
+                                break;
+                        }
+
+                        fee = withdrawal * feeRate;
+                        total = withdrawal + fee;
+                        balance -= total;
+
+                        System.out.println("APPROVED");
+                        System.out.println("Withdrawal: " + withdrawal);
+                        System.out.println("Transaction Fee: " + fee);
+                        System.out.println("Remaining Balance: " + balance);
+                    }
+                }
+            } else {
+                System.out.println("DENIED: Incorrect PIN.");
+            }
+        } else {
+            System.out.println("DENIED: Incorrect username.");
+        }
+    }
+}
