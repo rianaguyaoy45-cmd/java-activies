@@ -1,0 +1,89 @@
+public class Week1Activities {
+
+    public static void main(String[] args) {
+
+        // ==========================================
+        // BASIC: PERSONAL PROFILE PRINTER
+        // ==========================================
+        System.out.println("\n===== BASIC: PERSONAL PROFILE PRINTER =====");
+
+        int age = 19;
+        double height = 1.60;
+        char initial = 'R';
+        boolean isStudent = true;
+        String fullName = "Rian Chereign D. Aguyaoy";
+
+        System.out.println("Full Name: " + fullName);
+        System.out.println("Age: " + age);
+        System.out.println("Height: " + height + " meters");
+        System.out.println("Initial: " + initial);
+        System.out.println("Student Status: " + isStudent);
+
+
+        // ==========================================
+        // INTERMEDIATE: TYPE-SAFE SHOPPING CALCULATOR
+        // ==========================================
+        System.out.println("\n===== INTERMEDIATE: TYPE-SAFE SHOPPING CALCULATOR =====");
+
+        int quantity = 3;
+        double unitPrice = 25.50;
+        String storeName = "ABC Store";
+
+        double totalCost = quantity * unitPrice;
+
+        System.out.println("Store Name: " + storeName);
+        System.out.println("Quantity: " + quantity);
+        System.out.println("Unit Price: PHP " + unitPrice);
+        System.out.println("Total Cost: PHP " + totalCost);
+
+
+        // ==========================================
+        // ADVANCED: UNIT CASTING CONVERTER
+        // ==========================================
+        System.out.println("\n===== ADVANCED: UNIT CASTING CONVERTER =====");
+
+        double centimeters = 187.5;
+
+        int wholeMeters = (int) (centimeters / 100);
+        double remainingCm = centimeters - (wholeMeters * 100);
+
+        double widenedValue = wholeMeters;
+        int narrowedValue = (int) 12.75;
+
+        System.out.println("Centimeters: " + centimeters);
+        System.out.println("Whole Meters: " + wholeMeters);
+        System.out.println("Remaining Centimeters: " + remainingCm);
+        System.out.println("Widening Example: " + widenedValue);
+        System.out.println("Narrowing Example: " + narrowedValue);
+
+
+        // ==========================================
+        // EXPERT: OVERFLOW & REFERENCE INVESTIGATOR
+        // ==========================================
+        System.out.println("\n===== EXPERT: OVERFLOW & REFERENCE INVESTIGATOR =====");
+
+        byte number = 127;
+        number++;
+
+        System.out.println("Byte Overflow Result: " + number);
+
+        String text1 = new String("Java");
+        String text2 = new String("Java");
+        String text3 = "Java";
+
+        System.out.println("text1 == text2: " + (text1 == text2));
+        System.out.println("text1.equals(text2): " + text1.equals(text2));
+        System.out.println("text1 == text3: " + (text1 == text3));
+        System.out.println("text1.equals(text3): " + text1.equals(text3));
+
+        int[] array1 = {10, 20, 30};
+        int[] array2 = array1;
+
+        array2[0] = 99;
+
+        System.out.println("array1[0]: " + array1[0]);
+        System.out.println("array2[0]: " + array2[0]);
+
+        System.out.println("\n===== ALL ACTIVITIES COMPLETED =====");
+    }
+}
