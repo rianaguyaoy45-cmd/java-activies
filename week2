@@ -1,0 +1,85 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("==================================");
+        System.out.println("FOUR-FUNCTION CALCULATOR");
+        System.out.println("==================================");
+
+        System.out.print("Enter first number: ");
+        int a = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int b = sc.nextInt();
+
+        System.out.println("Addition: " + (a + b));
+        System.out.println("Subtraction: " + (a - b));
+        System.out.println("Multiplication: " + (a * b));
+
+        if (b != 0) {
+            System.out.println("Division: " + ((double) a / b));
+            System.out.println("Remainder: " + (a % b));
+        } else {
+            System.out.println("Division: Cannot divide by zero");
+            System.out.println("Remainder: Cannot divide by zero");
+        }
+
+        System.out.println("\n==================================");
+        System.out.println("GRADE THRESHOLD CHECKER");
+        System.out.println("==================================");
+
+        System.out.print("Enter average grade: ");
+        double average = sc.nextDouble();
+
+        System.out.print("Enter number of absences: ");
+        int absences = sc.nextInt();
+
+        if ((average >= 75 && absences <= 3) || average >= 90) {
+            System.out.println("PASS");
+
+            if (average >= 90) {
+                System.out.println("Reason: Average is 90 or higher.");
+            } else {
+                System.out.println("Reason: Average is at least 75 and absences are 3 or fewer.");
+            }
+        } else {
+            System.out.println("FAIL");
+            System.out.println("Reason: Does not meet the passing conditions.");
+        }
+
+        System.out.println("\n==================================");
+        System.out.println("COMPOUND GROWTH & INCREMENT TRACKER");
+        System.out.println("==================================");
+
+        int balance = 100;
+
+        balance += 50;
+        System.out.println("After adding 50: " + balance);
+
+        balance *= 2;
+        System.out.println("After multiplying by 2: " + balance);
+
+        balance += 25;
+        System.out.println("After adding 25: " + balance);
+
+        int count = 5;
+
+        System.out.println("Post-increment: " + count++);
+        System.out.println("Count after post-increment: " + count);
+
+        System.out.println("Pre-increment: " + (++count));
+        System.out.println("Count after pre-increment: " + count);
+
+        System.out.println("\n==================================");
+        System.out.println("PRECEDENCE PUZZLE SOLVER");
+        System.out.println("==================================");
+
+        System.out.println("Expression 1: " + (2 + 3 * 4));
+        System.out.println("Expression 2: " + (10 > 5 && 8 < 12));
+        System.out.println("Expression 3: " + (5 + 2 * 3 == 11));
+
+        sc.close();
+    }
+}
